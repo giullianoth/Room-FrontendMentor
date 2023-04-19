@@ -3,5 +3,29 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: $font-size-default;
+}
+
+body {
+    font-family: $font-league-spartan;
+
+    a {
+        text-decoration: none;
+        color: $color-black;
+
+        @include transition;
+
+        &:hover {
+            color: $color-dark-gray;
+        }
+    }
+
+    p {
+        font-size: $font-size-default;
+        color: $color-dark-gray;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+    }
 }

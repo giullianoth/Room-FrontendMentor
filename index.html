@@ -8,6 +8,9 @@
   
   <title>Room homepage</title>
 
+  <script src="https://kit.fontawesome.com/fe0ca3f893.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/styles/css/style.min.css">
+
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -24,7 +27,7 @@
 
       <div class="room_header_content_lightbox">
         <nav class="room_header_content_lightbox_nav">
-          <i class="room_header_content_lightbox_nav_icon"></i>
+          <i class="fa-solid fa-bars room_header_content_lightbox_nav_icon"></i>
 
           <ul class="room_header_content_lightbox_nav_menu">
             <li><a href="#">Home</a></li>
@@ -42,10 +45,6 @@
       <article class="room_slider_slide">
         <div class="room_slider_slide_image">
           <img src="assets/images/mobile-image-hero-1.jpg" alt="Image Hero 1">
-          <div class="room_slider_slide_image_nav">
-            <i></i>
-            <i></i>
-          </div>
         </div>
   
         <div class="room_slider_slide_info">
@@ -66,10 +65,6 @@
       <article class="room_slider_slide">
         <div class="room_slider_slide_image">
           <img src="assets/images/mobile-image-hero-2.jpg" alt="Image Hero 2">
-          <div class="room_slider_slide_image_nav">
-            <i></i>
-            <i></i>
-          </div>
         </div>
   
         <div class="room_slider_slide_info">
@@ -90,10 +85,6 @@
       <article class="room_slider_slide">
         <div class="room_slider_slide_image">
           <img src="assets/images/mobile-image-hero-3.jpg" alt="Image Hero 3">
-          <div class="room_slider_slide_image_nav">
-            <i></i>
-            <i></i>
-          </div>
         </div>
   
         <div class="room_slider_slide_info">
@@ -110,6 +101,11 @@
             </div>
         </div>
       </article>
+
+      <div class="room_slider_slide_image_nav">
+        <i class="fa-solid fa-chevron-left"></i>
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
     </section>
 
     <section class="room_about">
@@ -135,8 +131,10 @@
   </main>
 
   <footer class="room_footer">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    <p class="room_footer_content">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Giulliano Guimarães</a>.
+    </p>
   </footer>
 </body>
 </html>

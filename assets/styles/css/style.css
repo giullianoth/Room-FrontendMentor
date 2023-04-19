@@ -4,5 +4,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+}
+body a {
+  text-decoration: none;
+  color: hsl(0, 0%, 0%);
+  transition: all 0.3s ease 0s;
+}
+body a:hover {
+  color: hsl(0, 0%, 63%);
+}
+body p {
   font-size: 12px;
+  color: hsl(0, 0%, 63%);
+}
+body img {
+  display: block;
+  width: 100%;
 }

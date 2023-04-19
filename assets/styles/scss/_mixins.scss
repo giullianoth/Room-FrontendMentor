@@ -1,0 +1,62 @@
+// THEME
+@mixin theme() {
+    .room {
+        @content;
+    }
+}
+
+// FLEXBOX
+@mixin flex($justifyContent: center, $alignItems: center, $flexWrap: wrap) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+    flex-wrap: $flexWrap;
+}
+
+@mixin flexBasis($basis, $gap: 0) {
+    @if $gap == 0 {
+        flex-basis: $basis;
+    }
+
+    @else {
+        flex-basis: calc($basis - $gap);
+    }
+}
+
+@mixin flex1($gap: 0) {
+    @include flexBasis(100%, $gap);
+}
+
+@mixin flex2($gap: 0) {
+    @include flexBasis(calc(100% / 2), $gap);
+}
+
+@mixin flex3($gap: 0) {
+    @include flexBasis(calc(100% / 3), $gap);
+}
+
+@mixin flex4($gap: 0) {
+    @include flexBasis(calc(100% / 4), $gap);
+}
+
+// POSITION
+@mixin relative() {
+    position: relative;
+}
+
+@mixin absolute($top: 0, $left: 0) {
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+
+@mixin fixed($top: 0, $left: 0) {
+    position: fixed;
+    top: $top;
+    left: $left;
+}
+
+// TRANSITION
+@mixin transition($property: all, $duration: 0.3s, $timingFunction: ease, $delay: 0s) {
+    transition: $property $duration $timingFunction $delay;
+}

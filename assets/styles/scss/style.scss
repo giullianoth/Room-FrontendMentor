@@ -1,8 +1,9 @@
 // FONT
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap');
 
-// SCSS VARIABLES
+// SCSS VARIABLES AND MIXINS
 @import "variables";
+@import "mixins";
 
 // BOOT CONFIG
 @import "boot";
