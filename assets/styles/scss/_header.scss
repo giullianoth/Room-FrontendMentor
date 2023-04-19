@@ -40,12 +40,21 @@
                 width: 100%;
                 height: 100%;
                 z-index: 10;
-                display: none;
+                // display: none;
+
+                @include transition;
 
                 &_nav {
                     padding: 50px 30px;
                     background-color: $color-white;
                     @include flex(flex-end);
+                    @include transition;
+
+                    transform: translateY(calc(-50% - 100px));
+
+                    &.active {
+                        transform: translateY(0);
+                    }
 
                     &_menu {
                         @include flex;
