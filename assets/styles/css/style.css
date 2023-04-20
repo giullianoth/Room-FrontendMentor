@@ -9,6 +9,9 @@
 body {
   font-family: "League Spartan", sans-serif;
 }
+body h1, body h2 {
+  font-weight: 600;
+}
 body a {
   text-decoration: none;
   color: hsl(0, 0%, 0%);
@@ -18,7 +21,7 @@ body a:hover {
   color: hsl(0, 0%, 63%);
 }
 body p {
-  font-size: 12px;
+  font-size: 14px;
   color: hsl(0, 0%, 63%);
 }
 body img {
@@ -116,4 +119,73 @@ body ul li {
   height: 3px;
   background-color: hsl(0, 0%, 0%);
   transition: all 0.3s ease 0s;
+}
+
+.room_slider {
+  width: 100%;
+  position: relative;
+}
+.room_slider_slide {
+  display: none;
+  transition: all linear ease 0s;
+}
+.room_slider_slide.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.room_slider_slide_image {
+  flex-basis: 100%;
+}
+.room_slider_slide_info {
+  flex-basis: 100%;
+  padding: 50px 30px;
+}
+.room_slider_slide_info_title h1 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+}
+.room_slider_slide_info_text {
+  line-height: 1.6em;
+  margin-bottom: 20px;
+}
+.room_slider_slide_info_action a {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 0.6em;
+}
+.room_slider_slide_info_action a::after {
+  content: url("../../images/icon-arrow.svg");
+  margin-left: 12px;
+  transition: all 0.3s ease 0s;
+}
+.room_slider_nav {
+  position: absolute;
+  top: 0;
+  left: unset;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.room_slider_nav .prev, .room_slider_nav .next {
+  width: 60px;
+  height: 60px;
+  background-color: hsl(0, 0%, 0%);
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: all 0.3s ease 0s;
+}
+.room_slider_nav .prev:hover, .room_slider_nav .next:hover {
+  background-color: hsl(0, 0%, 27%);
+}
+.room_slider_nav .prev img, .room_slider_nav .next img {
+  width: auto;
+  pointer-events: none;
 }

@@ -1,0 +1,82 @@
+@include theme() {
+    &_slider {
+        width: 100%;
+        @include relative;
+
+        &_slide {
+            display: none;
+            @include transition(all, linear);
+
+            &.active {
+                @include flex;
+            }
+
+            &_image {
+                @include flex1;
+            }
+
+            &_info {
+                @include flex1;
+                padding: 50px 30px;
+
+                &_title {
+                    h1 {
+                        font-size: 2.2em;
+                        margin-bottom: 20px;
+                    }
+                }
+
+                &_text {
+                    line-height: 1.6em;
+                    margin-bottom: 20px;
+                }
+
+                &_action {
+                    a {
+                        font-size: 1.2em;
+                        text-transform: uppercase;
+                        letter-spacing: 0.6em;
+
+                        // &:hover {
+                        //     &::after {
+                        //         content: url("../../images/icon-arrow-hover.svg");
+                        //     }
+                        // }
+    
+                        &::after {
+                            content: url("../../images/icon-arrow.svg");
+                            margin-left: 12px;
+                            @include transition;
+                        }
+                    }
+                }
+            }
+        }
+
+        &_nav {
+            @include absolute(0, unset);
+            right: 0;
+            @include flex(center, center, nowrap);
+
+            .prev, .next {
+                width: 60px;
+                height: 60px;
+                background-color: $color-black;
+                color: $color-white;
+                cursor: pointer;
+
+                @include flex;
+                @include transition;
+
+                &:hover {
+                    background-color: $color-very-dark-gray;
+                }
+
+                img {
+                    width: auto;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}

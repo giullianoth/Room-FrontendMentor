@@ -8,6 +8,10 @@
 body {
     font-family: $font-league-spartan;
 
+    h1, h2 {
+        font-weight: $font-weight-bold;
+    }
+
     a {
         text-decoration: none;
         color: $color-black;
