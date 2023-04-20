@@ -23,6 +23,7 @@ body a:hover {
 body p {
   font-size: 14px;
   color: hsl(0, 0%, 63%);
+  line-height: 1.6em;
 }
 body img {
   display: block;
@@ -147,13 +148,15 @@ body ul li {
   margin-bottom: 20px;
 }
 .room_slider_slide_info_text {
-  line-height: 1.6em;
   margin-bottom: 20px;
 }
 .room_slider_slide_info_action a {
   font-size: 1.2em;
   text-transform: uppercase;
   letter-spacing: 0.6em;
+}
+.room_slider_slide_info_action a:hover::after {
+  content: url("../../images/icon-arrow-hover.svg");
 }
 .room_slider_slide_info_action a::after {
   content: url("../../images/icon-arrow.svg");
@@ -188,4 +191,29 @@ body ul li {
 .room_slider_nav .prev img, .room_slider_nav .next img {
   width: auto;
   pointer-events: none;
+}
+
+.room_about {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.room_about_imgdark {
+  flex-basis: 100%;
+}
+.room_about_content {
+  flex-basis: 100%;
+  padding: 40px 30px;
+}
+.room_about_content h1 {
+  margin-bottom: 20px;
+  font-size: 0.9em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+}
+.room_about_imglight {
+  flex-basis: 100%;
 }

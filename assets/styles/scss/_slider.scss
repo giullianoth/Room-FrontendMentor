@@ -27,7 +27,6 @@
                 }
 
                 &_text {
-                    line-height: 1.6em;
                     margin-bottom: 20px;
                 }
 
@@ -37,11 +36,11 @@
                         text-transform: uppercase;
                         letter-spacing: 0.6em;
 
-                        // &:hover {
-                        //     &::after {
-                        //         content: url("../../images/icon-arrow-hover.svg");
-                        //     }
-                        // }
+                        &:hover {
+                            &::after {
+                                content: url("../../images/icon-arrow-hover.svg");
+                            }
+                        }
     
                         &::after {
                             content: url("../../images/icon-arrow.svg");

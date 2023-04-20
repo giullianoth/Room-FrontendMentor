@@ -1,0 +1,27 @@
+@include theme() {
+    &_about {
+        width: 100%;
+        @include flex;
+
+        &_imgdark {
+            @include flex1;
+        }
+
+        &_content {
+            @include flex1;
+            padding: 40px 30px;
+
+            h1 {
+                margin-bottom: 20px;
+                font-size: 0.9em;
+                font-weight: $font-weight-bold;
+                text-transform: uppercase;
+                letter-spacing: 0.4em;
+            }
+        }
+
+        &_imglight {
+            @include flex1;
+        }
+    }
+}
