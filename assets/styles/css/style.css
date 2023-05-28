@@ -41,6 +41,17 @@ body ul li {
   padding-top: 50px;
   width: 100%;
   z-index: 10;
+  transition: all 0.3s ease 0s;
+}
+.room_header.scrolling {
+  padding: 20px 0;
+  background-color: hsl(0, 0%, 0%);
+}
+.room_header.scrolling .room_header_content_menuicon {
+  top: 20px;
+}
+.room_header.scrolling .room_header_content_lightbox_nav {
+  padding: 20px 30px;
 }
 .room_header_content {
   padding: 0 30px;
@@ -200,7 +211,7 @@ body ul li {
 .room_slider_slide_image {
   flex-basis: 100%;
 }
-@media screen and (min-width: 899px) {
+@media screen and (min-width: 1023px) {
   .room_slider_slide_image {
     flex-basis: 60%;
     overflow: hidden;
@@ -208,16 +219,23 @@ body ul li {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    height: 100%;
   }
 }
 .room_slider_slide_image picture {
   width: 100%;
 }
+@media screen and (min-width: 1023px) {
+  .room_slider_slide_image picture img {
+    width: auto;
+    height: 100%;
+  }
+}
 .room_slider_slide_info {
   flex-basis: 100%;
   padding: 50px 30px;
 }
-@media screen and (min-width: 899px) {
+@media screen and (min-width: 1023px) {
   .room_slider_slide_info {
     flex-basis: 40%;
     padding: 80px;

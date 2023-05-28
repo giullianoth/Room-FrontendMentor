@@ -5,6 +5,20 @@
         padding-top: 50px;
         width: 100%;
         z-index: 10;
+        @include transition;
+
+        &.scrolling {
+            padding: 20px 0;
+            background-color: $color-black;
+
+            .room_header_content_menuicon {
+                top: 20px;
+            }
+
+            .room_header_content_lightbox_nav {
+                padding: 20px 30px;
+            }
+        }
 
         &_content {
             padding: 0 30px;

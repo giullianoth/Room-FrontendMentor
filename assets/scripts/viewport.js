@@ -1,12 +1,16 @@
 import { fadeIn, fadeOut } from "./effects.js"
-import { addClass, breakpointTabletLandscape, isVisible, mobileMenu, mobileMenuIcon, mobileMenuLightbox, removeClass, replaceClass, setStyle, slideImageHeight, slideImageWidth, sliderNav, sliderNavHeight, transitionDuration, windowSize } from "./variables.js"
+import { addClass, breakpointDesktopSD, header, isVisible, mobileMenu, mobileMenuIcon, mobileMenuLightbox, removeClass, replaceClass, setStyle, slideImageHeight, slideImageWidth, sliderNav, sliderNavHeight, transitionDuration, windowSize } from "./variables.js"
 
 const FixedHeader = () => {
-
+    if (window.scrollY > 0) {
+        addClass(header, "scrolling")
+    } else {        
+        removeClass(header, "scrolling")
+    }
 }
 
 const SliderViewport = () => {
-    if (windowSize() < breakpointTabletLandscape) {
+    if (windowSize() <= breakpointDesktopSD) {
         setStyle(sliderNav, "top", `${slideImageHeight() - sliderNavHeight()}px`)
         setStyle(sliderNav, "right", "")
         setStyle(sliderNav, "left", "")

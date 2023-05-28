@@ -35,6 +35,9 @@ const transitionDuration = 300
 const transitionGap = 10
 const transitionProperties = (property = "all", duration = `${transitionDuration / 1000}s`, timingFunction = "ease", delay = "0s") => `${property} ${duration} ${timingFunction} ${delay}`
 
+// HEADER
+const header = getElement(".j_header")
+
 // MOBILE MENU
 const mobileMenu = getElement(".j_menu")
 const mobileMenuIcon = getElement(".j_menu_icon")
@@ -55,6 +58,8 @@ export {
     layoutMobile, layoutDesktop, breakpointMobile, breakpointMobileLandscape, breakpointTablet, breakpointTabletLandscape, breakpointDesktopSD, breakpointDesktopHD1, breakpointDesktopHD2, breakpointDesktopFHD, windowSize,
 
     transitionDuration, transitionGap, transitionProperties,
+
+    header,
 
     mobileMenu, mobileMenuIcon, mobileMenuLightbox,
 
