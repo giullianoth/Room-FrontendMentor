@@ -1,12 +1,8 @@
-const sliderWiewport = () => {
-    const sliderNav = document.querySelector(".j_nav");
-    const slideImage = document.querySelector(".j_slide_image");
+import { MobileMenu, SliderViewport } from "./viewport.js";
 
-    let sliderNavHeight = sliderNav.offsetHeight;
-    let slideImageHeight = slideImage.offsetHeight;
+window.onload = () => {
+    SliderViewport()
+    MobileMenu()
+};
 
-    sliderNav.style.top = `${slideImageHeight - sliderNavHeight}px`;
-}
-
-window.onload = sliderWiewport;
-window.onresize = sliderWiewport;
+window.onresize = SliderViewport;

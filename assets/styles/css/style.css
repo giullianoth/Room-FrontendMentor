@@ -40,16 +40,39 @@ body ul li {
   left: 0;
   padding-top: 50px;
   width: 100%;
-  display: none;
+  z-index: 10;
 }
 .room_header_content {
   padding: 0 30px;
+}
+@media screen and (min-width: 899px) {
+  .room_header_content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 60px;
+  }
 }
 .room_header_content_logo {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+@media screen and (min-width: 599px) {
+  .room_header_content_logo {
+    justify-content: flex-start;
+    padding-top: 3px;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 60px;
+  }
+}
+@media screen and (min-width: 899px) {
+  .room_header_content_logo {
+    padding: 0;
+  }
 }
 .room_header_content_logo h1 {
   display: none;
@@ -59,12 +82,18 @@ body ul li {
 }
 .room_header_content_menuicon {
   position: absolute;
-  top: 47px;
+  top: 50px;
   left: 30px;
   color: hsl(0, 0%, 100%);
   font-size: 1.2em;
   cursor: pointer;
   z-index: 20;
+  transition: all 0.3s ease 0s;
+}
+@media screen and (min-width: 899px) {
+  .room_header_content_menuicon {
+    display: none;
+  }
 }
 .room_header_content_menuicon.active {
   color: hsl(0, 0%, 63%);
@@ -77,7 +106,17 @@ body ul li {
   width: 100%;
   height: 100%;
   z-index: 10;
+  display: none;
   transition: all 0.3s ease 0s;
+}
+@media screen and (min-width: 899px) {
+  .room_header_content_lightbox {
+    position: static;
+    background: none;
+    display: block;
+    width: auto;
+    height: auto;
+  }
 }
 .room_header_content_lightbox_nav {
   padding: 50px 30px;
@@ -88,6 +127,13 @@ body ul li {
   flex-wrap: wrap;
   transition: all 0.3s ease 0s;
   transform: translateY(calc(-50% - 100px));
+}
+@media screen and (min-width: 899px) {
+  .room_header_content_lightbox_nav {
+    transform: none;
+    background: none;
+    padding: 0;
+  }
 }
 .room_header_content_lightbox_nav.active {
   transform: translateY(0);
@@ -103,8 +149,18 @@ body ul li {
 .room_header_content_lightbox_nav_menu li a {
   position: relative;
 }
+@media screen and (min-width: 899px) {
+  .room_header_content_lightbox_nav_menu li a {
+    color: hsl(0, 0%, 100%);
+  }
+}
 .room_header_content_lightbox_nav_menu li a:hover {
   color: hsl(0, 0%, 0%);
+}
+@media screen and (min-width: 899px) {
+  .room_header_content_lightbox_nav_menu li a:hover {
+    color: hsl(0, 0%, 100%);
+  }
 }
 .room_header_content_lightbox_nav_menu li a:hover::before {
   transform: translateX(-50%) scaleX(1);
@@ -120,6 +176,11 @@ body ul li {
   height: 3px;
   background-color: hsl(0, 0%, 0%);
   transition: all 0.3s ease 0s;
+}
+@media screen and (min-width: 899px) {
+  .room_header_content_lightbox_nav_menu li a::before {
+    background-color: hsl(0, 0%, 100%);
+  }
 }
 
 .room_slider {
@@ -139,9 +200,28 @@ body ul li {
 .room_slider_slide_image {
   flex-basis: 100%;
 }
+@media screen and (min-width: 899px) {
+  .room_slider_slide_image {
+    flex-basis: 60%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+.room_slider_slide_image picture {
+  width: 100%;
+}
 .room_slider_slide_info {
   flex-basis: 100%;
   padding: 50px 30px;
+}
+@media screen and (min-width: 899px) {
+  .room_slider_slide_info {
+    flex-basis: 40%;
+    padding: 80px;
+  }
 }
 .room_slider_slide_info_title h1 {
   font-size: 2.2em;
@@ -155,12 +235,10 @@ body ul li {
   text-transform: uppercase;
   letter-spacing: 0.6em;
 }
-.room_slider_slide_info_action a:hover::after {
-  content: url("../../images/icon-arrow-hover.svg");
+.room_slider_slide_info_action a:hover svg {
+  fill: hsl(0, 0%, 63%);
 }
-.room_slider_slide_info_action a::after {
-  content: url("../../images/icon-arrow.svg");
-  margin-left: 12px;
+.room_slider_slide_info_action a svg {
   transition: all 0.3s ease 0s;
 }
 .room_slider_nav {
@@ -172,6 +250,11 @@ body ul li {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
+}
+@media screen and (min-width: 899px) {
+  .room_slider_nav {
+    justify-content: flex-start;
+  }
 }
 .room_slider_nav .prev, .room_slider_nav .next {
   width: 60px;
@@ -216,4 +299,4 @@ body ul li {
 }
 .room_about_imglight {
   flex-basis: 100%;
-}
+}/*# sourceMappingURL=style.css.map */

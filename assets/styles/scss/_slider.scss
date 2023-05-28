@@ -13,11 +13,32 @@
 
             &_image {
                 @include flex1;
+
+                @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                    @include flexBasis(60%);
+                    overflow: hidden;
+                    @include flex;
+                }
+
+                picture {
+                    width: 100%;
+                    img {
+                        @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                            // width: auto;
+                            // height: 100%;
+                        }
+                    }
+                }
             }
 
             &_info {
                 @include flex1;
                 padding: 50px 30px;
+
+                @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                    @include flexBasis(40%);
+                    padding: 80px;
+                }
 
                 &_title {
                     h1 {
@@ -37,14 +58,12 @@
                         letter-spacing: 0.6em;
 
                         &:hover {
-                            &::after {
-                                content: url("../../images/icon-arrow-hover.svg");
+                            svg {
+                                fill: $color-dark-gray;
                             }
                         }
-    
-                        &::after {
-                            content: url("../../images/icon-arrow.svg");
-                            margin-left: 12px;
+
+                        svg {
                             @include transition;
                         }
                     }
@@ -56,6 +75,10 @@
             @include absolute(0, unset);
             right: 0;
             @include flex(center, center, nowrap);
+
+            @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                justify-content: flex-start;
+            }
 
             .prev, .next {
                 width: 60px;

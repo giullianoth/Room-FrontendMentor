@@ -4,14 +4,32 @@
         @include fixed;
         padding-top: 50px;
         width: 100%;
-
-        display: none;
+        z-index: 10;
 
         &_content {
             padding: 0 30px;
+
+            @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                @include flex(flex-start);
+                column-gap: 60px;
+            }
             
             &_logo {
                 @include flex;
+
+                @include setResponsiveDesign($breakpoint-mobile-landscape) {
+                    justify-content: flex-start;
+                    padding: {
+                        top: 3px;
+                        right: 0;
+                        bottom: 0;
+                        left: 60px;
+                    }
+                }
+
+                @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                    padding: 0;
+                }
 
                 h1 {
                     display: none;
@@ -23,11 +41,17 @@
             }
 
             &_menuicon {
-                @include absolute(47px, 30px);
+                @include absolute(50px, 30px);
                 color: $color-white;
                 font-size: 1.2em;
                 cursor: pointer;
                 z-index: 20;
+
+                @include transition;
+
+                @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                    display: none;
+                }
 
                 &.active {
                     color: $color-dark-gray;
@@ -40,9 +64,17 @@
                 width: 100%;
                 height: 100%;
                 z-index: 10;
-                // display: none;
+                display: none;
 
                 @include transition;
+
+                @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                    position: static;
+                    background: none;
+                    display: block;
+                    width: auto;
+                    height: auto;
+                }
 
                 &_nav {
                     padding: 50px 30px;
@@ -51,6 +83,12 @@
                     @include transition;
 
                     transform: translateY(calc(-50% - 100px));
+
+                    @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                        transform: none;
+                        background: none;
+                        padding: 0;
+                    }
 
                     &.active {
                         transform: translateY(0);
@@ -65,8 +103,16 @@
                             a {                                
                                 @include relative;
 
+                                @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                                    color: $color-white;
+                                }
+
                                 &:hover {
                                     color: $color-black;
+
+                                    @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                                        color: $color-white;
+                                    }
 
                                     &::before {
                                         transform: translateX(-50%) scaleX(1);
@@ -84,6 +130,10 @@
                                     background-color: $color-black;
 
                                     @include transition;
+
+                                    @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                                        background-color: $color-white;
+                                    }
                                 }
                             }
                         }
