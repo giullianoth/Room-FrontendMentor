@@ -8,15 +8,19 @@
         @include transition;
 
         &.scrolling {
-            padding: 20px 0;
+            padding: 15px 0;
             background-color: $color-black;
 
             .room_header_content_menuicon {
-                top: 20px;
+                top: 15px;
             }
 
             .room_header_content_lightbox_nav {
-                padding: 20px 30px;
+                padding: 15px 30px;
+
+                @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                    padding: 0;
+                }
             }
         }
 
