@@ -16,20 +16,6 @@
 
                 @include setResponsiveDesign($breakpoint-desktop-sd) {
                     @include flexBasis(60%);
-                    overflow: hidden;
-                    @include flex;
-                    height: 100%;
-                }
-
-                picture {
-                    width: 100%;
-
-                    img {
-                        @include setResponsiveDesign($breakpoint-desktop-sd) {
-                            width: auto;
-                            height: 100%;
-                        }
-                    }
                 }
             }
 
@@ -39,6 +25,9 @@
 
                 @include setResponsiveDesign($breakpoint-desktop-sd) {
                     @include flexBasis(40%);
+                }
+
+                @include setResponsiveDesign($breakpoint-desktop-hd1) {
                     padding: 80px;
                 }
 

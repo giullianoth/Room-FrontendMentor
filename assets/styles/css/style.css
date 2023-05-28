@@ -219,21 +219,6 @@ body ul li {
 @media screen and (min-width: 1023px) {
   .room_slider_slide_image {
     flex-basis: 60%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 100%;
-  }
-}
-.room_slider_slide_image picture {
-  width: 100%;
-}
-@media screen and (min-width: 1023px) {
-  .room_slider_slide_image picture img {
-    width: auto;
-    height: 100%;
   }
 }
 .room_slider_slide_info {
@@ -243,6 +228,10 @@ body ul li {
 @media screen and (min-width: 1023px) {
   .room_slider_slide_info {
     flex-basis: 40%;
+  }
+}
+@media screen and (min-width: 1365px) {
+  .room_slider_slide_info {
     padding: 80px;
   }
 }
