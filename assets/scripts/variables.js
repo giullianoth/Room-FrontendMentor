@@ -15,6 +15,12 @@ const computedStyle = (element, attr) => window.getComputedStyle(element)[attr]
 const isVisible = (element) => computedStyle(element, "display") !== "none"
 const isActive = (element) => elementContainsClass(element, "active")
 
+const normalArray = (arr) => {
+    let newArray = []
+    arr.forEach(item => newArray.push(item))
+    return newArray
+}
+
 // LAYOUT AND BREAKPOINTS
 const layoutMobile = 375
 const layoutDesktop = 1440
@@ -46,15 +52,26 @@ const mobileMenuLightbox = getElement(".j_menu_lightbox")
 
 // SLIDER
 const sliderNav = getElement(".j_nav")
-const slideImage = getElement(".j_slide_image")
+const prevSlideBtn = getElement(".prev", sliderNav)
+const nextSlideBtn = getElement(".next", sliderNav)
+
+const slideImage = (slide) => getElement(".j_slide_image picture", slide)
+const slideImageForViewport = () => normalArray(getElements(".j_slide_image")).find(image => isVisible(image.parentNode))
+
+const slideInfo = (slide) => getElement(".j_slide_info", slide)
 
 const sliderNavHeight = () => sliderNav.offsetHeight
-const slideImageHeight = () => slideImage.offsetHeight
-const slideImageWidth = () => slideImage.offsetWidth
+const slideImageHeight = () => slideImageForViewport().offsetHeight
+const slideImageWidth = () => slideImageForViewport().offsetWidth
+
+const slides = normalArray(getElements(".j_slide"))
+const slidePos = (slide) => slides.indexOf(slide)
+const prevSlide = (slide) => slides[(slidePos(slide) === 0 ? slides.length - 1 : slidePos(slide) - 1)]
+const nextSlide = (slide) => slides[(slidePos(slide) === slides.length - 1 ? 0 : slidePos(slide) + 1)]
 
 export {
     getElement, getElements,
-    setStyle, addClass, removeClass, toggleClass, replaceClass, elementContainsClass, computedStyle, isVisible, isActive,
+    setStyle, addClass, removeClass, toggleClass, replaceClass, elementContainsClass, computedStyle, isVisible, isActive, normalArray,
 
     layoutMobile, layoutDesktop, breakpointMobile, breakpointMobileLandscape, breakpointTablet, breakpointTabletLandscape, breakpointDesktopSD, breakpointDesktopHD1, breakpointDesktopHD2, breakpointDesktopFHD, windowSize,
 
@@ -64,5 +81,5 @@ export {
 
     mobileMenu, mobileMenuIcon, mobileMenuLightbox,
 
-    sliderNav, slideImage, sliderNavHeight, slideImageHeight, slideImageWidth,
+    sliderNav, prevSlideBtn, nextSlideBtn, slideImage, slideInfo, slideImageForViewport, sliderNavHeight, slideImageHeight, slideImageWidth, slides, slidePos, prevSlide, nextSlide,
 }

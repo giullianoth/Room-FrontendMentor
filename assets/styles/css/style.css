@@ -206,7 +206,6 @@ body ul li {
 }
 .room_slider_slide {
   display: none;
-  transition: all linear ease 0s;
 }
 .room_slider_slide.active {
   display: flex;
@@ -225,6 +224,7 @@ body ul li {
 .room_slider_slide_info {
   flex-basis: 100%;
   padding: 50px 30px;
+  transition: all 0.3s ease 0s;
 }
 @media screen and (min-width: 1023px) {
   .room_slider_slide_info {

@@ -5,7 +5,7 @@
 
         &_slide {
             display: none;
-            @include transition(all, linear);
+            // @include transition(all, linear);
 
             &.active {
                 @include flex;
@@ -22,6 +22,8 @@
             &_info {
                 @include flex1;
                 padding: 50px 30px;
+
+                @include transition;
 
                 @include setResponsiveDesign($breakpoint-desktop-sd) {
                     @include flexBasis(40%);
