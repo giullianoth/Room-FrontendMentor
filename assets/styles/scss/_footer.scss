@@ -1,0 +1,17 @@
+@include theme() {
+    &_footer {
+        @include absolute(unset, unset);
+        bottom: 10px;
+        right: 10px;
+        width: 100%;
+
+        &_content {
+            font-size: 12px;
+            text-align: center;
+
+            @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                text-align: right;
+            }
+        }
+    }
+}

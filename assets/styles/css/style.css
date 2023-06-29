@@ -8,6 +8,7 @@
 
 body {
   font-family: "League Spartan", sans-serif;
+  position: relative;
 }
 body h1, body h2 {
   font-weight: 600;
@@ -292,15 +293,36 @@ body ul li {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: wrap;
+}
+.room_about img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .room_about_imgdark {
   flex-basis: 100%;
 }
+@media screen and (min-width: 899px) {
+  .room_about_imgdark {
+    flex-basis: 33.3333333333%;
+  }
+}
 .room_about_content {
   flex-basis: 100%;
   padding: 40px 30px;
+}
+@media screen and (min-width: 899px) {
+  .room_about_content {
+    flex-basis: 33.3333333333%;
+  }
+}
+@media screen and (min-width: 1439px) {
+  .room_about_content {
+    padding: 80px;
+  }
 }
 .room_about_content h1 {
   margin-bottom: 20px;
@@ -311,4 +333,27 @@ body ul li {
 }
 .room_about_imglight {
   flex-basis: 100%;
-}/*# sourceMappingURL=style.css.map */
+}
+@media screen and (min-width: 899px) {
+  .room_about_imglight {
+    flex-basis: 33.3333333333%;
+  }
+}
+
+.room_footer {
+  position: absolute;
+  top: unset;
+  left: unset;
+  bottom: 10px;
+  right: 10px;
+  width: 100%;
+}
+.room_footer_content {
+  font-size: 12px;
+  text-align: center;
+}
+@media screen and (min-width: 899px) {
+  .room_footer_content {
+    text-align: right;
+  }
+}

@@ -33,7 +33,8 @@ const windowSize = () => window.innerWidth
 // TRANSITION
 const transitionDuration = 300
 const transitionGap = 10
-const transitionProperties = (property = "all", duration = `${transitionDuration / 1000}s`, timingFunction = "ease", delay = "0s") => `${property} ${duration} ${timingFunction} ${delay}`
+const transitionProperties = (property = "all", duration = `${transitionDuration / 1000}s`, timingFunction = "ease", delay = "0s") =>
+    `${property} ${duration} ${timingFunction} ${delay}`
 
 // HEADER
 const header = getElement(".j_header")

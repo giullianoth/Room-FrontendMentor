@@ -1,15 +1,39 @@
 @include theme() {
     &_about {
         width: 100%;
-        @include flex;
+        @include flex(center, stretch);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
 
         &_imgdark {
             @include flex1;
+
+            @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                @include flex3;
+            }
+
+            // @include setResponsiveDesign($breakpoint-desktop-hd2) {
+            //     @include flexBasis(30%);
+            // }
         }
 
         &_content {
             @include flex1;
             padding: 40px 30px;
+
+            @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                @include flex3;
+            }
+
+            @include setResponsiveDesign($breakpoint-desktop-hd2) {
+                padding: 80px;
+                // @include flexBasis(40%);
+            }
 
             h1 {
                 margin-bottom: 20px;
@@ -22,6 +46,14 @@
 
         &_imglight {
             @include flex1;
+
+            @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                @include flex3;
+            }
+
+            // @include setResponsiveDesign($breakpoint-desktop-hd2) {
+            //     @include flexBasis(30%);
+            // }
         }
     }
 }
